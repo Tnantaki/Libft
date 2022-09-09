@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 19:18:58 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/09 13:08:59 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/09 11:15:17 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/09 12:08:05 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+/*
+char	*ft_itoa(int n)
 {
-	size_t	i;
-	size_t	j;
+	char	nb;
+	int	tmp;
+	int	i;
+	int	sign;
 
 	i = 0;
-	if (!find[0])
-		return ((char *)str);
-	while (str[i] && i < len)
+	if (n < 0)
 	{
-		j = 0;
-		while (find[j] == str[i + j] && (i + j) < len)
-			j++;
-		if (find[j] == '\0')
-			return ((char *)str + i);
-		i++;
+		n *= -1;
+		nb[i++] = '-'; 
 	}
-	return (NULL);
-}
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char *str = "Hello how are you";
-	char *find = "Hello";
+	while (n > 9)
+	{
+		tmp = n / 10;
+		if (tmp < 10)
+		{
+			nb[i++] = tmp + '0';
 
-	printf("%s\n", ft_strnstr(str, find, 10));
+		}
+
+	}
+	
+	nb = n % 10;
 }*/
