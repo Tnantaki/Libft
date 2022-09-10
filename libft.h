@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:42:30 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/09 09:55:09 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/10 16:24:10 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_substr(char const *s1, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s1, char c);
+char	*ft_itoa(int n);
 
 #endif

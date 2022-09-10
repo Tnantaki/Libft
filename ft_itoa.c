@@ -6,35 +6,67 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:15:17 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/09 12:08:05 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/10 16:48:07 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-char	*ft_itoa(int n)
-{
-	char	nb;
-	int	tmp;
-	int	i;
-	int	sign;
+#include <stdio.h>
 
-	i = 0;
+static int	ft_countlen(int n)
+{
+	int	len;
+
+	len = 0;
 	if (n < 0)
 	{
 		n *= -1;
-		nb[i++] = '-'; 
+		len++;
 	}
 	while (n > 9)
 	{
-		tmp = n / 10;
-		if (tmp < 10)
-		{
-			nb[i++] = tmp + '0';
-
-		}
-
+		n /= 10;
+		len++;
 	}
-	
-	nb = n % 10;
+	if (n < 9)
+		len++;
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int		sign;
+	int		lennb;
+	char	*nb;
+
+	sign = 0;
+	lennb = ft_countlen(n);
+	nb = malloc(sizeof(char) * lennb + 1);
+	nb[lennb--] = '\0';
+	if (n < 0)
+	{
+		n *= -1;
+		sign = 1;
+	}
+	while (n > 9)
+	{
+		nb[lennb--] = (n % 10) + '0';
+		n /= 10;
+	}
+	if (n < 10)
+		nb[lennb--] = n + '0';
+	if (sign)
+		nb[lennb] = '-';
+	return (nb);
+}	
+/*
+#include <stdio.h>
+int	main(void)
+{
+	int nb = -8234238;
+	char *nbr = ft_itoa(nb);
+	printf("lennb: %d\n", ft_countlen(nb));
+	printf("%s\n", nbr);
+	int	i;
+	int	i;
 }*/

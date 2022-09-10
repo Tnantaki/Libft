@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 09:51:11 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/10 00:01:39 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/10 15:17:15 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,46 @@
 
 int	ft_countword(char const *s, char c)
 {
-	size_t	i;
-	size_t	cw;
+	int	i;
+	int	cw;
 
 	i = 0;
 	cw = 0;
 	while (s[i])
 	{
-		if (s[i] == c || s[i] == '\0')
-			cw++;
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			if (s[i] == c)
+				cw++;
+		}
 	}
+	//if (s[i] == '\0')
+	//	cw++;
 	return (cw);
 }
 
-char	*ft_malloc_word(const char *str, char c, int start)
+char	*ft_malloc_word(const char *str, char c, int *start)
 {
 	char	*word;
-	size_t	i;
-	size_t	len;
+	int	i;
+	int	len;
 
 	len = 0;
 	i = 0;
-	while (str[len] != c)
+	while (str[*start] == c)
+		*start += 1;
+	while (str[*start + len] != c && str[*start + len] != '\0')
 		len++;
 	word = malloc(sizeof(char) * (len + 1));
 	while (i < len)
 	{
-		word[i] = str[start + len];
+		word[i] = str[*start + i];
 		i++;
 	}
+	*start += len;
 	word[i] = '\0';
 	return (word);
 }
@@ -52,37 +62,35 @@ char	*ft_malloc_word(const char *str, char c, int start)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	cw;
-	size_t	i;
-	size_t	len;
-	size_t	start;
+	int	cw;
+	int	i;
+	int	start;
 
 	i = 0;
-	len = 0;
 	start = 0;
 	cw = ft_countword(s, c);
-	split = malloc(sizeof(char *) * (cw + 1));
+	split = (char **)malloc(sizeof(char *) * (cw + 1));
 	while (i < cw)
 	{
-		split[i] = ft_malloc_word(s, len, start);
+		split[i] = ft_malloc_word(s, c, &start);
 		i++;
 	}
-	split[i][0] = '\0';
+	split[i] = 0;
 	return (split);
 }
 /*
 #include <stdio.h>
+#include <string.h>
 int	main(void)
 {
-	char *str = "I am the one";
+	char *str = "  tripouille  42  ";
 	char c = ' ';
-	char **split;
-	printf("%d\n", ft_countword(str, c));
-
-
-	//split = ft_split(str, c);
+	printf("len str: %lu\n", strlen(str));
+	printf("cw: %d\n", ft_countword(str, c));
+	char **split = ft_split(str, c);
 	
-	//for (int i = 0; i < 4; i++)
-	 //      printf("%s\n", split[i]);	
-	//return (0);
+	for (int i = 0; i < ft_countword(str, c); i++)
+		printf("index %d: %s\n", i, split[i]);
+	printf("%d\n", (int)split[2]);
+	return (0);
 }*/
