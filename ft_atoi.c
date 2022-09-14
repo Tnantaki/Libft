@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 23:02:01 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/06 10:26:10 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/12 09:35:44 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,18 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i++] - '0');
 	return (nb * negative);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	printf("atoi\t: %d\n",atoi("   123982p322"));	
+	printf("ft_atoi\t: %d\n",ft_atoi("   123982p322"));
+	printf("\n");
+	printf("atoi\t: %d\n",atoi("   +12389 2309"));	
+	printf("ft_atoi\t: %d\n",ft_atoi("   +12389 2309"));
+	printf("\n");
+	printf("atoi\t: %d\n",atoi("    -4294967297"));
+	printf("ft_atoi\t: %d\n",ft_atoi("    -4294967297"));
+}*/

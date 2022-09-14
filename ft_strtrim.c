@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:37:34 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/09 11:28:40 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/11 23:18:36 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 int	main(void)
 {
 	char *str = "   xxxtripouille   xxx";
-	char *trim = " x";
+	char *trim = "str";
 
 	char *s = ft_strtrim(str, trim);
 	printf("%s\n", s);

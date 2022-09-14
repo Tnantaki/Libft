@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 19:18:58 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/12 22:48:46 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/12 17:29:07 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/13 07:02:15 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	size_t	j;
+	unsigned int	i;
 
 	i = 0;
-	if (!find[0])
-		return ((char *)str);
-	while (str[i] && i < len)
+	while (s[i])
 	{
-		j = 0;
-		while (find[j] == str[i + j] && (i + j) < len)
-			j++;
-		if (find[j] == '\0')
-			return ((char *)str + i);
+		f(i, &s[i]);
 		i++;
 	}
-	return (NULL);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char *str = "Hello how are you";
-	char *find = "Hello";
-
-	printf("%s\n", ft_strnstr(str, find, 10));
-}*/

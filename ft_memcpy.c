@@ -6,30 +6,35 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:08:59 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/10 00:17:01 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/14 11:22:22 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned char *dststr;
+	const unsigned char *srcstr;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dst);
+	dststr = dst;
+	srcstr = src;
+	if (!dst && !src)
+		return (NULL);
+	while (len--)
+		dststr[len] = srcstr[len];
+	return (dststr);
 }
 /*
 #include <stdio.h>
+#include <string.h>
 int	main(void)
 {
-	char src[6] = "Tiew";
+	char src[15] = "Hello world";
+	char src2[15] = "Hello world";
 
-	ft_memcpy(src + 1, src, 4);
-	printf("%s\n", src);
+	memcpy(src + 2, src, 10);
+	printf("memcpy\t\t:%s\n", src);
+	ft_memcpy(src2 + 2, src2, 10);
+	printf("ft_memcpy\t:%s\n", src2);
 }*/

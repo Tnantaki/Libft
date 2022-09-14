@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:13:32 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/10 00:21:34 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/14 12:25:04 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,30 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {	
-	size_t	i;
+	unsigned char *dststr;
+	const unsigned char *srcstr;
 
-	i = 0;
+	dststr = dst;
+	srcstr = src;
 	if (dst <= src)
-	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
+		dststr = ft_memcpy(dst, src, len);
 	else
 	{
-		while (len)
-		{
-			len--;
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-		}
+		while (len--)
+			dststr[len] = srcstr[len];
 	}
-	return (dst);
+	return (dststr);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	char src[20] = "Hello world";
+	char src2[20] = "Hello world";
+
+	memmove(src + 2, src, 10);
+	printf("memmove\t\t:%s\n", src);
+	ft_memmove(src2 + 2, src2, 10);
+	printf("ft_memmove\t:%s\n", src2);
+}*/

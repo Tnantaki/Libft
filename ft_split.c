@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 09:51:11 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/10 15:17:15 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:44:18 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,18 @@ int	ft_countword(char const *s, char c)
 		while (s[i] && s[i] != c)
 		{
 			i++;
-			if (s[i] == c)
+			if (s[i] == c || s[i] == '\0')
 				cw++;
 		}
 	}
-	//if (s[i] == '\0')
-	//	cw++;
 	return (cw);
 }
 
 char	*ft_malloc_word(const char *str, char c, int *start)
 {
 	char	*word;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	len = 0;
 	i = 0;
@@ -62,9 +60,9 @@ char	*ft_malloc_word(const char *str, char c, int *start)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int	cw;
-	int	i;
-	int	start;
+	int		cw;
+	int		i;
+	int		start;
 
 	i = 0;
 	start = 0;

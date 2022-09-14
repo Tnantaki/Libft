@@ -6,7 +6,7 @@
 #    By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 11:35:05 by tnantaki          #+#    #+#              #
-#    Updated: 2022/09/10 16:24:33 by tnantaki         ###   ########.fr        #
+#    Updated: 2022/09/13 06:33:17 by tnantaki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,14 @@ SRCS = ft_isalpha.c\
        ft_strjoin.c\
        ft_strtrim.c\
        ft_split.c\
-       ft_itoa.c
+       ft_itoa.c\
+       ft_strmapi.c\
+       ft_striteri.c\
+	ft_putchar_fd.c\
+	ft_putstr_fd.c\
+	ft_putendl_fd.c\
+	ft_putnbr_fd.c
+	
 
 OBJS = $(SRCS:.c=.o)
 

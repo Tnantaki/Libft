@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 19:18:58 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/12 22:48:46 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/12 07:50:42 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/13 17:42:54 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	char	nbr[12];
 
-	i = 0;
-	if (!find[0])
-		return ((char *)str);
-	while (str[i] && i < len)
+	i = -1;
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	if (n == -2147483648)
 	{
-		j = 0;
-		while (find[j] == str[i + j] && (i + j) < len)
-			j++;
-		if (find[j] == '\0')
-			return ((char *)str + i);
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		nbr[++i] = (n % 10) + '0';
+		n /= 10;
+	}
+	while (i >= 0)
+		write(fd, &nbr[i--], 1);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char *str = "Hello how are you";
-	char *find = "Hello";
-
-	printf("%s\n", ft_strnstr(str, find, 10));
+	ft_putnbr_fd(-223032, 1);
 }*/

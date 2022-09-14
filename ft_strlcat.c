@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 12:31:09 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/05 22:44:02 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/14 12:36:21 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
+	if (!src)
+		return (0);
 	if (dstsize == 0)
 		return (lensrc);
 	while (src[i] && lendst + i < dstsize - 1)
