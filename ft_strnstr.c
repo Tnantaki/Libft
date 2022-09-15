@@ -32,7 +32,6 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 	return (NULL);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
 	char *str = "Hello how are you";

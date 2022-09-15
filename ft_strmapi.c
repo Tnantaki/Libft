@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 08:26:20 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/13 16:17:54 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/15 09:03:53 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 /*
-#include <stdio.h>
 char	func(unsigned int i, char c)
 {
 	char	tmp;

@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 21:57:18 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/05 14:04:22 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/15 09:08:31 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (ft_strlen(src));
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int	main()
 {
 	char dst[10] = "A";
@@ -37,6 +35,6 @@ int	main()
 	char *src = "coucou";
 	printf("%lu\n", strlcpy(dst, src, 2));
 	printf("%s\n", dst);
-	printf("%lu\n", ft_strlcpy(dest, src, 2));
+	printf("%lu\n", ft_strlcpy(dest, src, -1));
 	printf("%s\n", dest);
 }*/

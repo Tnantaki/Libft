@@ -36,8 +36,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (lensrc + lendst);
 }
 /*
-#include <string.h>
-#include <stdio.h>
 int	main(void)
 {
 	char dest[30] = "Hello";

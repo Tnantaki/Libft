@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 09:51:11 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/13 17:44:18 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/15 09:00:35 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int	main(void)
 {
 	char *str = "  tripouille  42  ";
@@ -86,7 +84,7 @@ int	main(void)
 	printf("len str: %lu\n", strlen(str));
 	printf("cw: %d\n", ft_countword(str, c));
 	char **split = ft_split(str, c);
-	
+
 	for (int i = 0; i < ft_countword(str, c); i++)
 		printf("index %d: %s\n", i, split[i]);
 	printf("%d\n", (int)split[2]);

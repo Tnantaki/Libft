@@ -34,9 +34,6 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i++] - '0');
 	return (nb * negative);
 }
-/*
-#include <stdio.h>
-#include <string.h>
 
 int	main(void)
 {
@@ -48,4 +45,7 @@ int	main(void)
 	printf("\n");
 	printf("atoi\t: %d\n",atoi("    -4294967297"));
 	printf("ft_atoi\t: %d\n",ft_atoi("    -4294967297"));
-}*/
+	printf("atoi\t: %d\n",atoi("   -2147483648"));	
+	printf("ft_atoi\t: %d\n",ft_atoi("   -2147483648"));
+	printf("\n");
+}

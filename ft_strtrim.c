@@ -69,8 +69,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (dst);
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int	main(void)
 {
 	char *str = "   xxxtripouille   xxx";

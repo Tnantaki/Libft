@@ -29,8 +29,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dststr);
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int	main(void)
 {
 	char src[20] = "Hello world";

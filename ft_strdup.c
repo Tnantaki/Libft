@@ -28,8 +28,6 @@ char	*ft_strdup(const char *s1)
 	return (dst);
 }
 /*
-#include <unistd.h>
-#include <string.h>
 int	main(void)
 {
 	char *str1 = "Hello";

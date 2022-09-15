@@ -38,7 +38,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dst);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
 	printf("%s\n", ft_strjoin("Mos", "42"));

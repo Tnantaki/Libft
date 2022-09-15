@@ -28,9 +28,6 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 /*
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
 int	main(void)
 {
 	size_t i = 0;

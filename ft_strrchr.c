@@ -29,8 +29,6 @@ char	*ft_strrchr(const char *str, int c)
 	return (0);
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int	main(void)
 {
 	char *s = "hello";

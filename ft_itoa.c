@@ -74,7 +74,6 @@ char	*ft_itoa(int n)
 	return (nb);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
 	int nb = -2147483648;
