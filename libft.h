@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:42:30 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/14 13:08:37 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:41:27 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-#include <stdio.h> 
-#include <string.h>
-#include <math.h>
 
 //Part:1
 int		ft_isalpha(int c);

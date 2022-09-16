@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 19:18:58 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/12 22:48:46 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:50:08 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,30 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 	i = 0;
 	if (!find[0])
 		return ((char *)str);
+	if (!len)
+		return (NULL);
 	while (str[i] && i < len)
 	{
 		j = 0;
 		while (find[j] == str[i + j] && (i + j) < len)
+		{
 			j++;
-		if (find[j] == '\0')
-			return ((char *)str + i);
+			if (find[j] == '\0')
+				return ((char *)str + i);
+		}
 		i++;
 	}
 	return (NULL);
 }
 /*
+#include <string.h>
+#include <stdio.h>
 int	main(void)
 {
+	char *s1 = "A";
 	char *str = "Hello how are you";
-	char *find = "Hello";
+	char *find = "are";
 
-	printf("%s\n", ft_strnstr(str, find, 10));
+	printf("%s\n", strnstr(s1, s1, 2));
+	printf("%s\n", ft_strnstr(s1, s1, 2));
 }*/

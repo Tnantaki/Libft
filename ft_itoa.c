@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 11:15:17 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/13 07:26:18 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:38:54 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_countlen(int n)
 		n /= 10;
 		len++;
 	}
-	if (n < 9)
+	if (n <= 9)
 		len++;
 	return (len);
 }
@@ -60,6 +60,8 @@ char	*ft_itoa(int n)
 	sign = 0;
 	lennb = ft_countlen(n);
 	nb = malloc(sizeof(char) * lennb + 1);
+	if (!nb)
+		return (NULL);
 	nb[lennb--] = '\0';
 	n = ft_checkmin(n, &over, &sign);
 	while (n > 9)
@@ -81,4 +83,9 @@ int	main(void)
 	char *nbr = ft_itoa(nb);
 	printf("lennb: %d\n", ft_countlen(nb));
 	printf("%s\n", nbr);
+	for (int i = 0; i < 100; i++)
+	{
+		int nb1 = rand();
+		printf("%d\t\t: %s\t %d\n", nb1, ft_itoa(nb1), nb1 - (atoi(ft_itoa(nb1))));
+	}
 }*/

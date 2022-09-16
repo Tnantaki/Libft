@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:18:59 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/14 09:51:54 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:44:13 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	unsigned char *str; 
+	size_t			i;
+	unsigned char	*str;
 
 	i = 0;
 	str = b;

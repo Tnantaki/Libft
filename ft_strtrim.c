@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:37:34 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/11 23:18:36 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:30:30 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	lens1;
 	size_t	lendst;
 
+	if (!s1)
+		return (NULL);
 	begin = ft_checkfront(s1, set);
 	lens1 = ft_checkend(s1, set, ft_strlen(s1));
 	if (begin >= lens1)
 		return ((char *)ft_calloc(1, sizeof(char)));
 	lendst = lens1 - begin;
 	dst = malloc(sizeof(char) * lendst + 1);
+	if (!dst)
+		return (NULL);
 	i = 0;
 	while (i < lendst)
 		dst[i++] = s1[begin++];

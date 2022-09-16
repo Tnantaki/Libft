@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:55:42 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/15 09:07:30 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/16 18:02:07 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *str;
+	char	*str;
 	size_t	i;
 
 	i = 0;

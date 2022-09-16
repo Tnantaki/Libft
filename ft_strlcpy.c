@@ -33,6 +33,7 @@ int	main()
 	char dst[10] = "A";
 	char dest[10] = "A";
 	char *src = "coucou";
+
 	printf("%lu\n", strlcpy(dst, src, 2));
 	printf("%s\n", dst);
 	printf("%lu\n", ft_strlcpy(dest, src, -1));
