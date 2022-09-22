@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:51:40 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/16 18:07:58 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:41:57 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned char *str;
-	unsigned char care;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	care;
 
 	i = 0;
 	str = (unsigned char *)s;

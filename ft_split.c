@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		split[i] = ft_malloc_word(s, c, &start);
 		i++;
 	}
-	split[i] = 0;
+	split[i] = NULL;
 	return (split);
 }
 /*

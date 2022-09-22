@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 20:10:09 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/19 21:34:06 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:39:42 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ t_list	*ft_lstnew(void *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-//	(*new).content = content;
 	new->next = NULL;
-//	(*new).next = NULL;
 	return (new);
 }
 /*
+line 22 can use (*new).content = content;
+line 23 cane use (*new).next = NULL;
 #include <stdio.h>
 int main(void)
 {

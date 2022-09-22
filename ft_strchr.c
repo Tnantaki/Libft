@@ -6,7 +6,7 @@
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 21:11:35 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/07 16:43:55 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:40:29 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
-	char care;
+	char	care;
 
 	i = 0;
 	care = (char)c;
