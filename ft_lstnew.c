@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:48:50 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/06 22:33:41 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/18 20:10:09 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/19 21:34:06 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
-	const unsigned char *str1;
-	const unsigned char *str2;
+	t_list	*new;
 
-	i = 0;
-	str1 = s1;
-	str2 = s2;
-	while (i < n)
-	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
-	}
-	return (0);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+//	(*new).content = content;
+	new->next = NULL;
+//	(*new).next = NULL;
+	return (new);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	t_list *head;
+	char *text = "World";
+	ft_lstnew("Hello");
+
+	head = ft_lstnew(text);
+
+	printf("%s\n", head->content);
+}
+*/

@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:48:50 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/06 22:33:41 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/21 09:54:17 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/21 09:59:22 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
-	const unsigned char *str1;
-	const unsigned char *str2;
+	int	size;
 
-	i = 0;
-	str1 = s1;
-	str2 = s2;
-	while (i < n)
+	size = 0;
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		lst = lst->next;
+		size++;
 	}
-	return (0);
+	if (lst->next == NULL)
+		size++;
+	return (size);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	t_list	*lst;
+
+	lst = ft_lstnew((void *)1);
+	printf("%d\n", ft_lstsize(lst));
+}
+
+*/

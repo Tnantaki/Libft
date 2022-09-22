@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 13:48:50 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/09/06 22:33:41 by tnantaki         ###   ########.fr       */
+/*   Created: 2022/09/21 11:07:06 by tnantaki          #+#    #+#             */
+/*   Updated: 2022/09/21 11:39:16 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned int	i;
-	const unsigned char *str1;
-	const unsigned char *str2;
+	t_list	*temp;
 
-	i = 0;
-	str1 = s1;
-	str2 = s2;
-	while (i < n)
+	temp = *lst; // copy pointer to used
+	if (*lst)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (temp->next != NULL)
+			temp = temp->next;
+		//if (temp == NULL)
+		temp->next = new;
 	}
-	return (0);
+	else
+		*lst = new;
 }
+//(lst) is adress all **linked list
+//(*lst) is adress of first node
+//(**lst) we can't use this for represent value we need to use ((*lst)->content)

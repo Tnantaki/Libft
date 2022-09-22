@@ -15,15 +15,17 @@
 char	*ft_strchr(const char *str, int c)
 {
 	size_t	i;
+	char care;
 
 	i = 0;
+	care = (char)c;
 	while (str[i])
 	{
-		if (str[i] == (char)c)
+		if (str[i] == care)
 			return ((char *)str + i);
 		i++;
 	}
-	if ((char)c == '\0')
+	if (care == '\0')
 		return ((char *)str + i);
 	return (0);
 }
@@ -35,7 +37,7 @@ int	main(void)
 	char c = 0;
 
 	printf("%s\n", strchr(str, c));
-	printf("%s\n", ft_strchr(str, c));	
+	printf("%s\n", ft_strchr(str, c));
 	write(1, str, 18);
 	write(1, ft_strchr(str, c), 18);
 

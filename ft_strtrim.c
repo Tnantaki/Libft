@@ -77,8 +77,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int	main(void)
 {
-	char *str = "   xxxtripouille   xxx";
-	char *trim = "x ";
+	char *str = "helloworldhelloz";
+	char *trim = "world";
 
 	// char *s = ft_strtrim(str, trim);
 	// printf("%s\n", s);
@@ -86,8 +86,8 @@ int	main(void)
 	// char s1[] = "         ";
 	// char *trim2 = " ";
 	// char *s = ft_end(str, trim, ft_strlen(str), ft_front(str, trim));
-	printf("Check_front :%zu\n", ft_front(str, trim));
-	printf("Check_end :%zu\n", s); 
+	// printf("Check_front :%zu\n", ft_front(str, trim));
+	// printf("Check_end :%zu\n", s);
 	printf("%s\n", ft_strtrim(str, trim));
 	// return (0);
 }*/
