@@ -25,3 +25,24 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+/*
+void iter(unsigned int i, char * s)
+{
+	*s += i;
+}
+
+void	ft_repA(unsigned int i, char *str)
+{
+	*str = 'A';
+}
+
+int	main(void)
+{
+	char str[] = "0000000000";
+	printf("%s\n", str);
+	ft_striteri(str, iter);
+	printf("%s\n", str);
+	ft_striteri(str, ft_repA);
+	printf("%s\n", str);
+}
+*/
