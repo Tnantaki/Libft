@@ -34,7 +34,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 /*
-char	func(unsigned int i, char c)
+char	ft_toupcase(unsigned int i, char c)
 {
 	char	tmp;
 
@@ -42,8 +42,19 @@ char	func(unsigned int i, char c)
 	return (tmp);
 }
 
+char	ft_decrypt_caesar_cipher(unsigned int i, char c)
+{
+	char	tmp;
+
+	tmp = c + 3;
+	return (tmp);
+}
+
 int	main()
 {
-	char *str = ft_strmapi("hello", func);
-	printf("%s\n",str);
-}*/
+	char *str1 = ft_strmapi("hello", ft_toupcase);
+	char *str2 = ft_strmapi("ebiil", ft_decrypt_caesar_cipher);
+	printf("uppcase \t\t:%s\n",str1);
+	printf("decrypt_caesar_cipher \t:%s\n",str2);
+}
+*/

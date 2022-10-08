@@ -20,7 +20,7 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
+/*
 int	main(void)
 {
 	t_list	*head;
@@ -38,3 +38,4 @@ int	main(void)
 	head = ft_lstlast(head);
 	printf("%s\n", head->content);
 }
+*/
