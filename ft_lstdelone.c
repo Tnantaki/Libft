@@ -41,5 +41,5 @@ int	main(void)
 	ft_lstdelone(head, ft_delcont);
 	printf("%s\n", head->content);
 	printf("%p\n", head);
-	printf("%lu\n", sizeof(*head->content));
+	printf("%lu\n", sizeof(head->content));
 }
