@@ -20,3 +20,21 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
+
+int	main(void)
+{
+	t_list	*head;
+	int size;
+	char *str1 = "Pepo01";
+	char *str2 = "Pepo02";
+	char *str3 = "Pepo03";
+	char *str4 = "Pepo04";
+
+	head = ft_lstnew(str1);
+	ft_lstadd_back(&head, ft_lstnew(str2));
+	ft_lstadd_back(&head, ft_lstnew(str3));
+	ft_lstadd_back(&head, ft_lstnew(str4));
+	printf("%s\n", head->content);
+	head = ft_lstlast(head);
+	printf("%s\n", head->content);
+}

@@ -6,7 +6,7 @@
 #    By: tnantaki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 11:35:05 by tnantaki          #+#    #+#              #
-#    Updated: 2022/09/21 22:38:51 by tnantaki         ###   ########.fr        #
+#    Updated: 2022/09/22 12:30:19 by tnantaki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstl
 
 OBJS = $(SRCS:.c=.o)
 
-OBBJS = $(BONUS_SRCS:.c=.o)
+BOBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -35,15 +35,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-bonus: $(OBBJS)
-	ar -rcs $(NAME) $(OBBJS)
+bonus: $(NAME) $(BOBJS)
+	ar -rcs $(NAME) $(BOBJS)
 
 clean:
-	rm -f $(OBJS) $(OBBJS)
+	rm -f $(OBJS) $(BOBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re bonus

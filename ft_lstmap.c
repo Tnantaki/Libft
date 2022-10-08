@@ -14,7 +14,7 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_node;
+	t_list	*new_node; // declare pointer(new_node)(one block) that point to type t_list
 	t_list	*new_list;
 
 	new_list = NULL;
@@ -30,3 +30,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+

@@ -26,8 +26,24 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
-//(lst) is adress all **linked list
-//(*lst) is adress of first node
-//(**lst) we can't use this for represent value we need to use ((*lst)->content)
-//line 19 // copy pointer to used
-//line 23 //if (temp == NULL)
+//(lst) is adress of *lst;
+//(*lst) is adress of content in the first node;
+//(**lst) we can't use this for represent value we need to use ((*lst)->content);
+// temp = *lst // make temp point to the same as node as lst point;
+/*
+int	main(void)
+{
+	t_list *head;
+	char *str1 = "Pepo01";
+	char *str2 = "Pepo02";
+	char *str3 = "Pepo03";
+
+	head = ft_lstnew(str1);
+	ft_lstadd_back(&head, ft_lstnew(str2));
+	ft_lstadd_back(&head, ft_lstnew(str3));
+	while (head)
+	{
+		printf("%s, ", head->content);
+		head = head->next;
+	}
+}*/
