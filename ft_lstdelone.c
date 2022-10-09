@@ -22,7 +22,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
-
+/*
 void	ft_delcont(void *content)
 {
 	free(content);
@@ -43,3 +43,4 @@ int	main(void)
 	printf("%p\n", head);
 	printf("%lu\n", sizeof(head->content));
 }
+*/
