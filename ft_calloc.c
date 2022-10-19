@@ -6,7 +6,7 @@
 /*   By: tnantaki <tnantaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 17:05:34 by tnantaki          #+#    #+#             */
-/*   Updated: 2022/10/19 17:48:45 by tnantaki         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:52:21 by tnantaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*str;
-	char	*s;
+	char	*str;
 	size_t	i;
 	size_t	len;
 
@@ -39,9 +38,8 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!str)
 		return (NULL);
 	i = 0;
-	s = str;
 	while (i < len)
-		s[i++] = 0;
+		str[i++] = 0;
 	return (str);
 }
 /*
