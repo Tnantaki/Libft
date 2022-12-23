@@ -34,26 +34,27 @@ void	ft_delcont(void *content)
 int	main(void)
 {
 	t_list *head;
-	char *str1 = "Pepo01";
-	char *str2 = "Pepo02";
-	char *str3 = "Pepo03";
+	char *str1 = strdup("Pepo01");
+	char *str2 = strdup("Pepo02");
+	char *str3 = strdup("Pepo03");
 
 	head = ft_lstnew(str1);
 
 	ft_lstadd_back(&head, ft_lstnew(str2));
 	ft_lstadd_back(&head, ft_lstnew(str3));
+	t_list *head2 = head;
 	printf("before clear :");
 	while (head)
 	{
-		printf("%s, ", head->content);
+		printf("%s, ", (char *)head->content);
 		head = head->next;
 	}
 	printf("\nafter clear :");
-	ft_lstclear(&head, ft_delcont);
-	while (head)
+	ft_lstclear(&head2, ft_delcont);
+	while (head2)
 	{
-		printf("%s, ", head->content);
-		head = head->next;
+		printf("%s, ", (char *)head2->content);
+		head2 = head2->next;
 	}
 	printf("\n");
 }

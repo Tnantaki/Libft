@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -36,7 +35,8 @@ int main(void)
 
 	head = ft_lstnew("World");
 
-	printf("%s\n", head->content);
+	printf("%s \n", (char *)head->content);
+	printf("%s \n", (char *)head->next);
 	printf("@head :%p\n", head);
 	printf("@&head :%p\n", &head);
 	printf("@head->content :%p\n", head->content);

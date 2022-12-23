@@ -28,7 +28,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 }
 //(lst) is adress of *lst;
 //(*lst) is adress of content in the first node;
-//(**lst) we can't use this for represent value we need to use ((*lst)->content);
+//((*lst)->content) use this for represent value instead of (**lst);
 // temp = *lst // make temp point to the same as node as lst point;
 /*
 int	main(void)
@@ -39,11 +39,13 @@ int	main(void)
 	char *str3 = "Pepo03";
 
 	head = ft_lstnew(str1);
+
 	ft_lstadd_back(&head, ft_lstnew(str2));
 	ft_lstadd_back(&head, ft_lstnew(str3));
 	while (head)
 	{
-		printf("%s, ", head->content);
+		printf("%s, ", (char *)head->content);
 		head = head->next;
 	}
-}*/
+}
+*/

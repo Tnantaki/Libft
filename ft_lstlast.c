@@ -34,8 +34,7 @@ int	main(void)
 	ft_lstadd_back(&head, ft_lstnew(str2));
 	ft_lstadd_back(&head, ft_lstnew(str3));
 	ft_lstadd_back(&head, ft_lstnew(str4));
-	printf("%s\n", head->content);
+	printf("before :%s\n", (char *)head->content);
 	head = ft_lstlast(head);
-	printf("%s\n", head->content);
-}
-*/
+	printf("after  :%s\n", (char *)head->content);
+}*/

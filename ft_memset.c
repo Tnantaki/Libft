@@ -29,7 +29,7 @@ int	main(void)
 {
 	char str[5] = "Hello";
 
-	printf("%s\n", memset(str, 'A', 2));
-	printf("%s\n", ft_memset(str, 'A', 2));
+	printf("%s\n", (char *)memset(str, '$', 2));
+	printf("%s\n", (char *)ft_memset(str, '$', 2));
 	return (0);
 }*/

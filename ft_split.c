@@ -92,4 +92,5 @@ int	main(void)
 		printf("index %d: %s\n", i, split[i]);
 	printf("%d\n", (int)split[2]);
 	return (0);
-}*/
+}
+*/

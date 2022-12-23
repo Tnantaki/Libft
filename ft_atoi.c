@@ -79,4 +79,5 @@ int	main(void)
 	printf("ft_atoi\t: %d\n",ft_atoi(n1));
 	printf("atoi\t: %d\n",atoi(n2));// - = 0;
 	printf("ft_atoi\t: %d\n",ft_atoi(n2));
+	printf("atoi\t: %d\n",atoi("jfef"));// - = 0;
 }*/

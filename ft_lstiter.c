@@ -22,53 +22,40 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-// void	ft_chage(void *content)
-// {
-// 	int	i = 0;
-// 	content = (char *)content;
-// 	while (*content)
-// 		content++ = 'A';
-// }
-void addOne(void * p) {++*(int*)p;}
+/*
+void	ft_chage(void *content)
+{
+	// char *str = content;
+	// *str = 'A';
+	*(char *)content = 'A';
+	// content = "Nano";
+}
+void addone(void * p) {++*(int*)p;}
 
 int	main(void)
 {
-	// t_list *head;
-	// char *str1 = "Pepo01";
-	// char *str2 = "Pepo02";
-	// char *str3 = "Pepo03";
+	t_list *head;
+	char *str1 = strdup("Pepo01");
+	char *str2 = strdup("Pepo02");
+	char *str3 = strdup("Pepo03");
 
-	// head = ft_lstnew(str1);
-	// t_list *temp = head;
-	// ft_lstadd_back(&head, ft_lstnew(str2));
-	// ft_lstadd_back(&head, ft_lstnew(str3));
-	// while (head)
-	// {
-	// 	printf("%s, ", head->content);
-	// 	head = head->next;
-	// }
-	// printf("\n");
-	// ft_lstiter(temp, ft_chage);
-	// while (head)
-	// {
-	// 	printf("%s, ", head->content);
-	// 	head = head->next;
-	// }
-	int tab[] = {0, 1, 2, 3};
-	printf("%d\n", *tab);
-	printf("%d\n", *(tab + 1));
-	printf("%p\n", &tab);
-	printf("%p\n", &*(tab + 1));
-	printf("%p\n", tab);
-	// t_list * l =  ft_lstnew(tab);
-	// for (int i = 1; i < 4; ++i)
-	// 	ft_lstadd_back(&l, ft_lstnew(tab + i));
-	// ft_lstiter(l, addOne);
-	// for (int i = 1; i <= 4; ++i)
-	// {
-	// 	printf("%d\n", *(int *)(l->content));
-	// 	l = l->next;
-	// }
-}
-
+	head = ft_lstnew(str1);
+	ft_lstadd_back(&head, ft_lstnew(str2));
+	ft_lstadd_back(&head, ft_lstnew(str3));
+	t_list *temp = head;
+	printf("Address of str1:%p\n", head);
+	while (head)
+	{
+		printf("%s, ", (char *)head->content);
+		head = head->next;
+	}
+	printf("\n");
+	ft_lstiter(temp, ft_chage);
+	printf("Address of str1:%p\n", temp);
+	while (temp)
+	{
+		printf("%s, ", (char *)temp->content);
+		temp = temp->next;
+	}
+	printf("\n");
+}*/

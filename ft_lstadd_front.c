@@ -33,9 +33,8 @@ int	main(void)
 	ft_lstadd_front(&head, ft_lstnew(str3));
 	while (head)
 	{
-		printf("%s, ", head->content);
+		printf("%s, ", (char *)head->content);
 		head = head->next;
 	}
 
-}
-*/
+}*/

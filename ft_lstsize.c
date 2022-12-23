@@ -45,4 +45,5 @@ int	main(void)
 	ft_lstadd_back(&head, ft_lstnew(str4));
 	size = ft_lstsize(head);
 	printf("size :%d\n", size);
-}*/
+}
+*/

@@ -25,7 +25,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 /*
 void	ft_delcont(void *content)
 {
-	free(content);
+	// free(content);
 }
 // the reason we free content because of in case user use
 // malloc to malloc content.
@@ -33,14 +33,15 @@ void	ft_delcont(void *content)
 int	main(void)
 {
 	t_list *head;
-	char *str1 = ft_strdup("Pepo01");
+	// printf("%lu\n", sizeof(t_list));
+	char *str1 = "Pepo01";
 	head = ft_lstnew(str1);
-	printf("%s\n", head->content);
-	printf("%p\n", head);
-	printf("%lu\n", sizeof(head->content));
+	printf("%s \n", head->content);
+	// printf("%p\n", head);
+	// printf("%lu\n", sizeof(head->content));
 	ft_lstdelone(head, ft_delcont);
-	printf("%s\n", head->content);
-	printf("%p\n", head);
-	printf("%lu\n", sizeof(head->content));
+	printf("%s \n", head->content);
+	// printf("%p\n", head);
+	// printf("%lu\n", sizeof(head->content));
 }
 */
