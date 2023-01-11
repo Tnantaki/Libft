@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_countword(char const *s, char c)
+static int	ft_countword(char const *s, char c)
 {
 	int	i;
 	int	cw;
@@ -33,7 +33,7 @@ int	ft_countword(char const *s, char c)
 	return (cw);
 }
 
-char	*ft_malloc_word(const char *str, char c, int *start)
+static char	*ft_malloc_word(const char *str, char c, int *start)
 {
 	char	*word;
 	int		i;
@@ -46,6 +46,8 @@ char	*ft_malloc_word(const char *str, char c, int *start)
 	while (str[*start + len] != c && str[*start + len] != '\0')
 		len++;
 	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
 	while (i < len)
 	{
 		word[i] = str[*start + i];
@@ -56,7 +58,18 @@ char	*ft_malloc_word(const char *str, char c, int *start)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_freeword(char **split, int i)
+{
+	while (i >= 0)
+	{
+		free(split[i]);
+		i--;
+	}
+	free(split);
+	return (NULL);
+}
+
+char	**ft_split(char *s, char c)
 {
 	char	**split;
 	int		cw;
@@ -74,23 +87,10 @@ char	**ft_split(char const *s, char c)
 	while (i < cw)
 	{
 		split[i] = ft_malloc_word(s, c, &start);
+		if (!split[i])
+			return (ft_freeword(split, i));
 		i++;
 	}
 	split[i] = NULL;
 	return (split);
 }
-/*
-int	main(void)
-{
-	char *str = "  tripouille  42  ";
-	char c = ' ';
-	printf("len str: %lu\n", strlen(str));
-	printf("cw: %d\n", ft_countword(str, c));
-	char **split = ft_split(str, c);
-
-	for (int i = 0; i < ft_countword(str, c); i++)
-		printf("index %d: %s\n", i, split[i]);
-	printf("%d\n", (int)split[2]);
-	return (0);
-}
-*/
