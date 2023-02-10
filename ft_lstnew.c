@@ -26,19 +26,19 @@ t_list	*ft_lstnew(void *content)
 
 // line 22 can use (*new).content = content;
 // line 23 cane use (*new).next = NULL;
-#include <stdio.h>
-int main(void)
-{
-	t_list *head;
-	printf("@head :%p\n", head);
-	printf("@&head :%p\n", &head);
+// #include <stdio.h>
+// int main(void)
+// {
+// 	t_list *head;
+// 	printf("@head :%p\n", head);
+// 	printf("@&head :%p\n", &head);
 
-	head = ft_lstnew("World");
+// 	head = ft_lstnew("World");
 
-	printf("%s \n", (char *)head->content);
-	printf("%s \n", head->next);
-	printf("@head :%p\n", head);
-	printf("@&head :%p\n", &head);
-	printf("@head->content :%p\n", head->content);
-	printf("@head->content :%p\n", head->next);
-}
+// 	printf("%s \n", (char *)head->content);
+// 	printf("%s \n", head->next);
+// 	printf("@head :%p\n", head);
+// 	printf("@&head :%p\n", &head);
+// 	printf("@head->content :%p\n", head->content);
+// 	printf("@head->content :%p\n", head->next);
+// }

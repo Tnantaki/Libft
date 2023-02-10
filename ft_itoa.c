@@ -12,80 +12,63 @@
 
 #include "libft.h"
 
-static int	ft_countlen(int n)
+static int	ft_countlen(int n, int *sign)
 {
 	int	len;
 
 	len = 0;
-	if (n == -2147483648)
-		return (11);
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
-		n *= -1;
+		*sign = -1;
 		len++;
 	}
-	while (n > 9)
+	while (n)
 	{
 		n /= 10;
 		len++;
 	}
-	if (n <= 9)
-		len++;
 	return (len);
-}
-
-static int	ft_checkmin(int n, int *over, int *sign)
-{
-	if (n == -2147483648)
-	{
-		n += 1000000000;
-		*over = 1;
-	}
-	if (n < 0)
-	{
-		n *= -1;
-		*sign = 1;
-	}
-	return (n);
 }
 
 char	*ft_itoa(int n)
 {
+	int		i;
 	int		sign;
-	int		lennb;
-	int		over;
 	char	*nb;
 
-	over = 0;
-	sign = 0;
-	lennb = ft_countlen(n);
-	nb = malloc(sizeof(char) * lennb + 1);
+	sign = 1;
+	i = ft_countlen(n, &sign);
+	nb = malloc(sizeof(char) * (i + 1));
 	if (!nb)
 		return (NULL);
-	nb[lennb--] = '\0';
-	n = ft_checkmin(n, &over, &sign);
-	while (n > 9)
+	nb[i--] = '\0';
+	if (!n)
 	{
-		nb[lennb--] = (n % 10) + '0';
+		nb[i] = '0';
+		return (nb);
+	}
+	if (n < 0)
+		nb[0] = '-';
+	while (n)
+	{
+		nb[i--] = ((n % 10) * sign) + '0';
 		n /= 10;
 	}
-	if (n < 10)
-		nb[lennb--] = n + '0' + over;
-	if (sign)
-		nb[lennb] = '-';
 	return (nb);
 }
-/*
-int	main(void)
-{
-	int nb = -2147483648;
+// int	main(void)
+// {
+// 	int nb = -2147483648;
 
-	char *nbr = ft_itoa(nb);
-	printf("lennb: %d\n", ft_countlen(nb));
-	printf("%s\n", nbr);
-	for (int i = 0; i < 100; i++)
-	{
-		int nb1 = rand();
-		printf("%d\t\t: %s\t %d\n", nb1, ft_itoa(nb1), nb1 - (atoi(ft_itoa(nb1))));
-	}
-}*/
+// 	char *nbr = ft_itoa(nb);
+// 	printf("lennb: %d\n", ft_countlen(nb));
+// 	printf("%s\n", nbr);
+// 	for (int i = 0; i < 100; i++)
+// 	{
+// 		int nb1 = rand();
+// 		printf("%d\t\t: %s\t %d\n", nb1, ft_itoa(nb1), nb1 - (atoi(ft_itoa(nb1))));
+// 	}
+// 	printf("%s\n", ft_itoa(nb));
+// }

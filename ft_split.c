@@ -69,7 +69,7 @@ static char	**ft_freeword(char **split, int i)
 	return (NULL);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		cw;
