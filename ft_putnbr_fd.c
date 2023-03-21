@@ -19,15 +19,15 @@ void	ft_putnbr_fd(int n, int fd)
 
 	i = -1;
 	if (n == 0)
-		ft_putchar_fd('0', fd);
+		write(fd, "0", 1);
 	if (n == -2147483648)
 	{
-		ft_putstr_fd("-2147483648", fd);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		write(fd, "-", 1);
 		n *= -1;
 	}
 	while (n > 0)
@@ -38,8 +38,8 @@ void	ft_putnbr_fd(int n, int fd)
 	while (i >= 0)
 		write(fd, &nbr[i--], 1);
 }
-/*
-int	main(void)
-{
-	ft_putnbr_fd(-223032, 1);
-}*/
+
+// int	main(void)
+// {
+// 	ft_putnbr_fd(-223032, 1);
+// }

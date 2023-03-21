@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 		if (str[i++] == '-')
 			negative = -1;
 	}
-	while (str[i] && ft_isdigit(str[i]))
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		if (nb >= 9223372036854775807 / 10 && str[i] - '0' > 7)
 		{
